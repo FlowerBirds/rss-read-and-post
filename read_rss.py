@@ -88,7 +88,10 @@ if __name__ == '__main__':
     report, md5s, datestr = read_and_record()
     if len(md5s) > 0:
         # or using an access token
-        g = Github("eaa462b9d126d5df25840c410445be991b71798c")
+        token = os.getenv("GITHUB_TOKEN")
+        if token is None:
+            raise EnvironmentError("token not find")
+        g = Github(token)
         repo = g.get_repo("FlowerBirds/flowerbirds.github.io")
         repo.create_issue(title="Bolg report on " + datestr + ": " + str(len(md5s)) + " articles", body=report)
         record_history(md5s)
