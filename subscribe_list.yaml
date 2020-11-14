@@ -1,0 +1,16 @@
+######
+rss:
+  - name: aaaa
+    url: http://blog.madhukaraphatak.com/feed.xml
+    type: rss
+    tags: spark,bigdata,java
+
+  - name: bbb
+    url: http://feed.cnblogs.com/blog/sitehome/rss
+    type: rss
+    tags: java
+
+  - name: ccc
+    url: https://feeds.feedburner.com/JavaCodeGeeks
+    type: rss
+    tags: java
